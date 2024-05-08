@@ -50,36 +50,30 @@ function calculateTotalPrice(
     }
     //calculating Bus fair for both retun and oneway and also check if its peak or none peak hour
      else if (selectedOption === "Bus") {
-      if (pickupOne === "Delft" && dropOff === "Cape Town") {
-        if (
-          (selectedHour >= 5 && selectedHour < 8) ||
+       if (tripType === "oneWay") {
+         if ((selectedHour >= 5 && selectedHour < 8) ||
           (selectedHour >= 16 && selectedHour < 22)
         ) {
-          if (tripType === "oneWay") {
+          
             return busPrice + peakHoursCharge;
-          } else if (tripType === "returnTrip") {
-            let fair = busPrice + peakHoursCharge;
-            console.log(fair);
-            return fair *= 2;
+          }
+          return busPrice;
+        }
+           else if (tripType === "returnTrip") {
+            if ((selectedHour >= 5 && selectedHour < 8) ||
+          (selectedHour >= 16 && selectedHour < 22)
+        ) {
+          
+          let fair = busPrice + peakHoursCharge;
+          return fair *= 2;
+          }
+           return busPrice * peakHoursCharge;
+
           } else {
             alert("Please select a valid trip type.");
           }
         }
-      } else if(selectedOption === "Bus") {
-        
-          if (tripType === "oneWay") {
-            return busPrice;
-          } else if (tripType === "returnTrip") {
-            return busPrice *= 2;
-          } else {
-            alert("Please select a valid trip type.");
-          }
-        }
-        
-      }
-      //return busPrice;
-    } 
-    //calculating train for both trips and oneway trip
+         //calculating train for both trips and oneway trip
     else if (selectedOption === "Train") {
       if (tripType === "oneWay") {
         return trainPrice;
@@ -89,16 +83,23 @@ function calculateTotalPrice(
         alert("Please select a valid trip type.");
       }
     }
-
-
-    // This is just a placeholder function. You need to implement your own logic.
+          
+      }
+   
+        
+     // This is just a placeholder function. You need to implement your own logic.
     // For example, you can calculate the total price based on the selected option, time, trip type, etc.
     // Here, I'm just returning a static value for demonstration purposes.
     // const totalPrice = basePrice + peakHoursSurcharge + returnTripSurcharge;
 
     // Display the total price
-    document.getElementById(
-      "total-price"
-    ).textContent = `Total Price: R${totalPrice.toFixed(2)}`;
+   
+     
+      document.getElementById(
+        "total-price"
+      ).textContent = `Total Price: R${totalPrice.toFixed(2)}`;
+
   }
-}
+   
+ 
+
