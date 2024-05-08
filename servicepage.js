@@ -37,19 +37,19 @@ function calculateTotalPrice(
   let busPrice = 21;
   let trainPrice = 8;
   const selectedHour = parseInt(selectedTime.split(":")[0], 10);
-
+//calculating taxi fair for both One way and Return
   if (pickupOne === "Delft" && dropOff === "Cape Town") {
     if (selectedOption === "Taxi") {
       if (tripType === "oneWay") {
-        alert("You selected One Way trip.");
         return taxiPrice;
-        console.log(taxiPrice);
       } else if (tripType === "returnTrip") {
         return (taxiPrice *= 2);
       } else {
         alert("Please select a valid trip type.");
       }
-    } else if (selectedOption === "Bus") {
+    }
+    //calculating Bus fair for both retun and oneway and also check if its peak or none peak hour
+     else if (selectedOption === "Bus") {
       if (pickupOne === "Delft" && dropOff === "Cape Town") {
         if (
           (selectedHour >= 5 && selectedHour < 8) ||
@@ -68,21 +68,18 @@ function calculateTotalPrice(
         return (busPrice *= 2);
       }
       return busPrice;
-    } else if (selectedOption === "Train") {
+    } 
+    //calculating train for both trips and oneway trip
+    else if (selectedOption === "Train") {
       if (tripType === "oneWay") {
-        alert("You selected One Way trip.");
         return trainPrice;
-        console.log(trainPrice);
       } else if (tripType === "returnTrip") {
-        return (trainPrice *= 2);
-        console.log(trainPrice);
-        alert("You selected Return Trip.");
+        return trainPrice *= 2;
       } else {
         alert("Please select a valid trip type.");
       }
     }
 
-    alert("Pick-up Location: " + pickupOne + "\nDrop-off Location: " + dropOff);
 
     // This is just a placeholder function. You need to implement your own logic.
     // For example, you can calculate the total price based on the selected option, time, trip type, etc.
