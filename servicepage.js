@@ -63,11 +63,10 @@ function calculateTotalPrice(
             if ((selectedHour >= 5 && selectedHour < 8) ||
           (selectedHour >= 16 && selectedHour < 22)
         ) {
-          
           let fair = busPrice + peakHoursCharge;
           return fair *= 2;
           }
-           return busPrice * peakHoursCharge;
+           return busPrice + peakHoursCharge;
 
           } else {
             alert("Please select a valid trip type.");
@@ -83,7 +82,7 @@ function calculateTotalPrice(
       } else {
         alert("Please select a valid trip type.");
       }
-      console.log(trainPrice);
+      
     }
           
       }
