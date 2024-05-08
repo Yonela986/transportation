@@ -11,62 +11,89 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   //Error message when nothing has been selected
   //Validate each input field
+  // Perform validation for missing inputs
   let isValid = true;
+  const errorMessages = [];
 
-  // Validate selectList
-  if (!selectedOption) {
-    document.getElementById("selectListError").textContent = "Please choose an option.";
+  if (!selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType) {
     isValid = false;
-  } else {
-    document.getElementById("selectListError").textContent = "";
+    errorMessages.push("Please fill in all fields.");
   }
 
-  // Validate pickupOne
-  if (!pickupOne) {
-    document.getElementById("pickupOneError").textContent = "Please enter a pickup location.";
-    isValid = false;
-  } else {
-    document.getElementById("pickupOneError").textContent = "";
-  }
+  // Display error messages if any
+  const errorMessageElement = document.getElementById("error-messages");
+  errorMessageElement.textContent = errorMessages.join(" ");
 
-  // Validate pickupTwo
-  if (!pickupTwo) {
-    document.getElementById("pickupTwoError").textContent = "Please enter a drop-off location.";
-    isValid = false;
-  } else {
-    document.getElementById("pickupTwoError").textContent = "";
-  }
+  // Calculate total price if all inputs are valid
+  if (isValid) {
+    const totalPrice = calculateTotalPrice(
+      selectedOption,
+      pickupOne,
+      dropOff,
+      selectedTime,
+      tripType
+    );
 
-  // Validate selectedTime
-  if (!selectedTime) {
-    document.getElementById("selectedTimeError").textContent = "Please select a time.";
-    isValid = false;
-  } else {
-    document.getElementById("selectedTimeError").textContent = "";
+    // Update the total price element with the calculated result
+    document.getElementById("total-price").textContent =
+      "Total Price: " + totalPrice;
   }
+//   let isValid = true;
 
-  // Validate tripType
-  if (!tripType) {
-    document.getElementById("tripTypeError").textContent = "Please select a trip type.";
-    isValid = false;
-  } else {
-    document.getElementById("tripTypeError").textContent = "";
-  }
+//   // Validate selectList
+//   if (!selectedOption) {
+//     document.getElementById("selectListError").textContent = "Please choose an option.";
+//     isValid = false;
+//   } else {
+//     document.getElementById("selectListError").textContent = "";
+//   }
 
-  // Perform calculations based on user inputs (this is a placeholder)
-  // You need to implement your own logic for calculating the total price
- if(isValid){
-  const totalPrice = calculateTotalPrice(
-    selectedOption,
-    pickupOne,
-    dropOff,
-    selectedTime,
-    tripType
-  );
-   // Update the total price element with the calculated result
-   document.getElementById("total-price").textContent =
-   "Total Price: " + totalPrice;
- } 
+//   // Validate pickupOne
+//   if (!pickupOne) {
+//     document.getElementById("pickupOneError").textContent = "Please enter a pickup location.";
+//     isValid = false;
+//   } else {
+//     document.getElementById("pickupOneError").textContent = "";
+//   }
+
+//   // Validate pickupTwo
+//   if (!pickupTwo) {
+//     document.getElementById("pickupTwoError").textContent = "Please enter a drop-off location.";
+//     isValid = false;
+//   } else {
+//     document.getElementById("pickupTwoError").textContent = "";
+//   }
+
+//   // Validate selectedTime
+//   if (!selectedTime) {
+//     document.getElementById("selectedTimeError").textContent = "Please select a time.";
+//     isValid = false;
+//   } else {
+//     document.getElementById("selectedTimeError").textContent = "";
+//   }
+
+//   // Validate tripType
+//   if (!tripType) {
+//     document.getElementById("tripTypeError").textContent = "Please select a trip type.";
+//     isValid = false;
+//   } else {
+//     document.getElementById("tripTypeError").textContent = "";
+//   }
+
+//   // Perform calculations based on user inputs (this is a placeholder)
+//   // You need to implement your own logic for calculating the total price
+//  if(isValid){
+//   const totalPrice = calculateTotalPrice(
+//     selectedOption,
+//     pickupOne,
+//     dropOff,
+//     selectedTime,
+//     tripType
+//   );
+//    // Update the total price element with the calculated result
+//    document.getElementById("total-price").textContent =
+//    "Total Price: " + totalPrice;
+//  } 
 
  
 });
