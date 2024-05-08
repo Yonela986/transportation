@@ -79,9 +79,11 @@ function calculateTotalPrice(
         return trainPrice;
       } else if (tripType === "returnTrip") {
         return trainPrice *= 2;
+        
       } else {
         alert("Please select a valid trip type.");
       }
+      console.log(trainPrice);
     }
           
       }
@@ -101,5 +103,5 @@ function calculateTotalPrice(
 
   }
    
- 
+
 
