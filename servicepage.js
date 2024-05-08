@@ -8,6 +8,20 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const selectedTime = document.getElementById("selectedTime").value;
   const tripType = document.getElementById("tripType").value;
 
+
+  //Erro message when nothing has been selected
+  // Perform validation for missing inputs
+  let isValid = true;
+  const errorMessages = [];
+
+  if (!selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType) {
+    isValid = false;
+    errorMessages.push("Please fill in all fields.");
+  }
+
+  // Display error messages if any
+  const errorMessageElement = document.getElementById("error-messages");
+  errorMessageElement.textContent = errorMessages.join(" ");
   // Perform calculations based on user inputs (this is a placeholder)
   // You need to implement your own logic for calculating the total price
   const totalPrice = calculateTotalPrice(
@@ -37,7 +51,7 @@ function calculateTotalPrice(
   let busPrice = 21;
   let trainPrice = 8;
   const selectedHour = parseInt(selectedTime.split(":")[0], 10);
-  
+
   //calculating taxi fair for both One way and Return
   if (pickupOne === "Delft" && dropOff === "Cape Town") {
     if (selectedOption === "Taxi") {
