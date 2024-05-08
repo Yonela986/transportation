@@ -37,71 +37,62 @@ function calculateTotalPrice(
   let busPrice = 21;
   let trainPrice = 8;
   const selectedHour = parseInt(selectedTime.split(":")[0], 10);
-//calculating taxi fair for both One way and Return
+  
+  //calculating taxi fair for both One way and Return
   if (pickupOne === "Delft" && dropOff === "Cape Town") {
     if (selectedOption === "Taxi") {
       if (tripType === "oneWay") {
         return taxiPrice;
       } else if (tripType === "returnTrip") {
-        return taxiPrice *= 2;
+        return (taxiPrice *= 2);
       } else {
         alert("Please select a valid trip type.");
       }
     }
     //calculating Bus fair for both retun and oneway and also check if its peak or none peak hour
-     else if (selectedOption === "Bus") {
-       if (tripType === "oneWay") {
-         if ((selectedHour >= 5 && selectedHour < 8) ||
+    else if (selectedOption === "Bus") {
+      if (tripType === "oneWay") {
+        if (
+          (selectedHour >= 5 && selectedHour < 8) ||
           (selectedHour >= 16 && selectedHour < 22)
         ) {
-          
-            return busPrice + peakHoursCharge;
-          }
-          return busPrice;
-        }else if (tripType === "returnTrip") {
-            if ((selectedHour >= 5 && selectedHour < 8) ||
+          return busPrice + peakHoursCharge;
+        }
+        return busPrice;
+      } else if (tripType === "returnTrip") {
+        if (
+          (selectedHour >= 5 && selectedHour < 8) ||
           (selectedHour >= 16 && selectedHour < 22)
         ) {
           let fair = busPrice + peakHoursCharge;
-          return fair *= 2;
-          }
-         
-           return busPrice *= 2;
-
-          } 
-          else {
-            alert("Please select a valid trip type.");
-          }
+          return (fair *= 2);
         }
-         //calculating train for both trips and oneway trip
+
+        return busPrice *= 2;
+      } else {
+        alert("Please select a valid trip type.");
+      }
+    }
+    //calculating train for both trips and oneway trip
     else if (selectedOption === "Train") {
       if (tripType === "oneWay") {
         return trainPrice;
       } else if (tripType === "returnTrip") {
-        return trainPrice *= 2;
-        
+        return (trainPrice *= 2);
       } else {
         alert("Please select a valid trip type.");
       }
-      
     }
-          
-      }
-   
-        
-     // This is just a placeholder function. You need to implement your own logic.
-    // For example, you can calculate the total price based on the selected option, time, trip type, etc.
-    // Here, I'm just returning a static value for demonstration purposes.
-    // const totalPrice = basePrice + peakHoursSurcharge + returnTripSurcharge;
-
-    // Display the total price
-   
-     
-      document.getElementById(
-        "total-price"
-      ).textContent = `Total Price: R${totalPrice.toFixed(2)}`;
-
   }
-   
 
+  // This is just a placeholder function. You need to implement your own logic.
+  // For example, you can calculate the total price based on the selected option, time, trip type, etc.
+  // Here, I'm just returning a static value for demonstration purposes.
+  // const totalPrice = basePrice + peakHoursSurcharge + returnTripSurcharge;
 
+  // Display the total price
+
+  document.getElementById(
+    "total-price"
+  ).textContent = `Total Price: R${totalPrice.toFixed(2)}`;
+}
