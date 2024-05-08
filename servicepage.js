@@ -59,13 +59,17 @@ function calculateTotalPrice(
             return busPrice + peakHoursCharge;
           } else if (tripType === "returnTrip") {
             let fair = busPrice + peakHoursCharge;
-            return (fair *= 2);
+            console.log(fair);
+            return fair *= 2;
           } else {
             alert("Please select a valid trip type.");
           }
         }
-      } else if (tripType === "returnTrip") {
-        return (busPrice *= 2);
+      } else if (pickupOne === "Delft" && dropOff === "Cape Town") {
+        if(tripType === "returnTrip"){
+          return busPrice *= 2;
+        }
+        
       }
       return busPrice;
     } 
