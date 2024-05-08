@@ -65,8 +65,8 @@ function calculateTotalPrice(
           let fair = busPrice + peakHoursCharge;
           return fair *= 2;
           }
-          let peakPrice = busPrice + peakHoursCharge;
-           return peakPrice;
+         
+           return busPrice *= 2;
 
           } 
           else {
