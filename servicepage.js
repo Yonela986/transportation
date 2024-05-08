@@ -65,13 +65,19 @@ function calculateTotalPrice(
             alert("Please select a valid trip type.");
           }
         }
-      } else if (pickupOne === "Delft" && dropOff === "Cape Town") {
-        if(tripType === "returnTrip"){
-          return busPrice *= 2;
+      } else if(selectedOption === "Bus") {
+        
+          if (tripType === "oneWay") {
+            return busPrice;
+          } else if (tripType === "returnTrip") {
+            return busPrice *= 2;
+          } else {
+            alert("Please select a valid trip type.");
+          }
         }
         
       }
-      return busPrice;
+      //return busPrice;
     } 
     //calculating train for both trips and oneway trip
     else if (selectedOption === "Train") {
