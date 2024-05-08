@@ -43,7 +43,7 @@ function calculateTotalPrice(
       if (tripType === "oneWay") {
         return taxiPrice;
       } else if (tripType === "returnTrip") {
-        return (taxiPrice *= 2);
+        return taxiPrice *= 2;
       } else {
         alert("Please select a valid trip type.");
       }
@@ -58,17 +58,18 @@ function calculateTotalPrice(
             return busPrice + peakHoursCharge;
           }
           return busPrice;
-        }
-           else if (tripType === "returnTrip") {
+        }else if (tripType === "returnTrip") {
             if ((selectedHour >= 5 && selectedHour < 8) ||
           (selectedHour >= 16 && selectedHour < 22)
         ) {
           let fair = busPrice + peakHoursCharge;
           return fair *= 2;
           }
-           return busPrice + peakHoursCharge;
+          let peakPrice = busPrice + peakHoursCharge;
+           return peakPrice;
 
-          } else {
+          } 
+          else {
             alert("Please select a valid trip type.");
           }
         }
