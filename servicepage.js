@@ -14,7 +14,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   if (isEmpty) {
     const errorMessageElement = document.createElement("div");
-    errorMessageElement.className = "error-message";
+    errorMessageElement.className.Add("error-message");
     errorMessageElement.textContent = "Please fill in all fields.";
     container.appendChild(errorMessageElement);
     console.log(errorMessageElement);
