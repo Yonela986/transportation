@@ -8,6 +8,28 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const selectedTime = document.getElementById("selectedTime").value;
   const tripType = document.getElementById("tripType").value;
 
+  // Regex for alphabetic characters and spaces
+  const pickupOneRegex = /^[A-Za-z\s]+$/; 
+  const isValidPickupOne = pickupOneRegex.test(pickupOne);
+  // Check if any input fields are empty or if pickupOne format is invalid
+  if (
+    !selectedOption ||
+    !pickupOne ||
+    !dropOff ||
+    !selectedTime ||
+    !tripType ||
+    !isValidPickupOne
+  ) {
+    // Display error message for pickupOne format
+    if (!isValidPickupOne) {
+      document.getElementById("pickupOneError").textContent =
+        "Please enter a valid format for Pickup One.";
+    } else {
+      document.getElementById("pickupOneError").textContent = ""; // Clear error message if format is valid
+    }
+    // Other validation logic...
+    return; // Prevent further execution if validation fails
+  }
   // Display error message
   const isEmpty =
     !selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType;
@@ -16,18 +38,18 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     const errorMessageElement = document.createElement("div");
     errorMessageElement.classList.add("error-message");
     errorMessageElement.textContent = "Please fill in all fields.";
-   
- // Append the error message to a container within the form
- const formContainer = document.getElementById("myForm");
- formContainer.appendChild(errorMessageElement);
+
+    // Append the error message to a container within the form
+    const formContainer = document.getElementById("myForm");
+    formContainer.appendChild(errorMessageElement);
     // Set timer to remove error message after 5 seconds
     const timerId = setTimeout(() => {
       if (errorMessageElement.parentNode === formContainer) {
         formContainer.removeChild(errorMessageElement);
-    }
-    clearTimeout(timerId);
-}, 5000); // 5 seconds in milliseconds
-} else {
+      }
+      clearTimeout(timerId);
+    }, 5000); // 5 seconds in milliseconds
+  } else {
     // If all inputs are filled, calculate total price
     const totalPrice = calculateTotalPrice(
       selectedOption,

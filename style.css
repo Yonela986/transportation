@@ -6,7 +6,6 @@
   margin: auto;
 }
 
-
 a:link {
   color: white;
 }
@@ -29,7 +28,7 @@ a:visited {
 .header-content {
   position: sticky;
   position: relative;
- color: #f0f0f0;
+  color: #f0f0f0;
   text-align: center;
   position: relative;
   top: 150px;
@@ -40,7 +39,6 @@ a:visited {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
- 
 }
 
 .navbar ul {
@@ -60,13 +58,12 @@ ul li {
   padding: 10px 20px;
   text-decoration: none;
 }
-.error-message{
-  
+.error-message {
   text-decoration: solid;
   width: 100%;
-        color: #990000;
-        padding: 10px;
-        text-align: center;
+  color: #990000;
+  padding: 10px;
+  text-align: center;
 }
 
 .footerbox {
@@ -81,57 +78,49 @@ ul li {
   color: aliceblue;
   height: 150px;
   text-shadow: 0px 0px 50px white;
- 
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
- /*-----About Page---*/
-#aboutContainer{
+/*-----About Page---*/
+#aboutContainer {
   text-align: center;
   padding-top: 2rem;
   min-height: 100px;
   padding: 2rem;
 }
- #icon{
- 
-  color:black;
-  }
-  .aboutContainer h1 {
-    text-decoration: underline;
-    font-size: 2rem;
+#icon {
+  color: black;
+}
+.aboutContainer h1 {
+  text-decoration: underline;
+  font-size: 2rem;
   margin-bottom: 1rem;
-  }
+}
 
-  .containerP {
-    font-size: 1.2rem;
+.containerP {
+  font-size: 1.2rem;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-    
-   
- /*---Team Members---*/
- #team {
+}
+
+/*---Team Members---*/
+#team {
   padding: 2rem;
   text-align: center;
 }
@@ -179,7 +168,7 @@ ul li {
 /* Form Container */
 #myForm {
   max-width: 499px;
-  margin:  auto;
+  margin: auto;
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -235,24 +224,21 @@ input[type="submit"]:hover {
 /*contact page*/
 #contactContainer {
   max-width: 599px;
-  margin:  auto;
+  margin: auto;
   padding: 30px;
   border-radius: 5px;
   font-family: Arial, sans-serif;
   position: relative;
-  
-  
 }
-.contactPage{
+.contactPage {
   max-width: 500px;
-  margin:  auto;
+  margin: auto;
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   position: relative;
- 
 }
 h2 {
   text-align: center;
@@ -290,7 +276,6 @@ button {
 button:hover {
   background-color: #0a0a0a;
 }
-
 
 /* Media Queries */
 @media screen and (max-width: 480px) {
