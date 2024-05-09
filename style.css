@@ -161,7 +161,7 @@ ul li {
 }
 /* Form Container */
 #myForm {
-  width: 100%; /* Set the width of the form to 100% */
+  max-width: 100%; /* Set the width of the form to 100% */
   margin: 0; /* Remove any default margin */
   padding: 0;
   border: 1px solid #ccc;
