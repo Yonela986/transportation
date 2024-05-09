@@ -16,10 +16,10 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     const errorMessageElement = document.createElement("div");
     errorMessageElement.classList.add("error-message");
     errorMessageElement.textContent = "Please fill in all fields.";
-    errorMessageElement.id = "error-message";
-    document.body.appendChild(errorMessageElement);
-    console.log(errorMessageElement);
-
+   
+ // Append the error message to a container within the form
+ const formContainer = document.getElementById("myForm");
+ formContainer.appendChild(errorMessageElement);
     // Set timer to remove error message after 5 seconds
     const timerId = setTimeout(() => {
       document.body.removeChild(errorMessageElement);
