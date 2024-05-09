@@ -21,7 +21,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   }
 
   // Display error messages if any
-  const errorMessageElement = document.getElementById("error-messages");
+  const errorMessageElement = document.getElementById("selectListError");
   errorMessageElement.textContent = errorMessages.join(" ");
 
   // Calculate total price if all inputs are valid
