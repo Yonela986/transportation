@@ -19,6 +19,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
       errorMessageElement.classList.add("error-message");
       errorMessageElement.textContent = "Please fill in all fields.";
       document.body.appendChild(errorMessageElement);
+      console.log(errorMessageElement);
 
       // Set timer to remove error message after 5 seconds
       const timerId = setTimeout(() => {
