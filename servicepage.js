@@ -22,7 +22,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
  formContainer.appendChild(errorMessageElement);
     // Set timer to remove error message after 5 seconds
     const timerId = setTimeout(() => {
-      if (formContainer.contains(errorMessageElement)) {
+      if (errorMessageElement.parentNode === formContainer) {
         formContainer.removeChild(errorMessageElement);
     }
     clearTimeout(timerId);
