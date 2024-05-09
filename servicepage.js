@@ -11,18 +11,27 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   // Perform calculations based on user inputs (this is a placeholder)
   // You need to implement your own logic for calculating the total price
-  const totalPrice = calculateTotalPrice(
-    selectedOption,
-    pickupOne,
-    dropOff,
-    selectedTime,
-    tripType
-  );
+  const isEmpty = !selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType;
 
-  // Update the total price element with the calculated result
-  document.getElementById("total-price").textContent =
-    "Total Price: " + totalPrice;
+  if (isEmpty) {
+      // Display error message
+      const errorMessageElement = document.createElement("div");
+      errorMessageElement.classList.add("error-message");
+      errorMessageElement.textContent = "Please fill in all fields.";
+      document.body.appendChild(errorMessageElement);
 
+      // Set timer to remove error message after 5 seconds
+      const timerId = setTimeout(() => {
+          document.body.removeChild(errorMessageElement);
+          clearTimeout(timerId);
+      }, 5000); // 5 seconds in milliseconds
+  } else {
+      // If all inputs are filled, calculate total price
+      const totalPrice = calculateTotalPrice(selectedOption, pickupOne, dropOff, selectedTime, tripType);
+      
+      // Update the total price element with the calculated result
+      document.getElementById("total-price").textContent = "Total Price: " + totalPrice;
+  }
   // Perform calculations based on user inputs (this is a placeholder)
   // You need to implement your own logic for calculating the total price
  
