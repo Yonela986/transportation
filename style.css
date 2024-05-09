@@ -60,7 +60,7 @@ ul li {
   padding: 10px 20px;
   text-decoration: none;
 }
-.error{
+.error-message{
   
   text-decoration: solid;
   position: fixed;
