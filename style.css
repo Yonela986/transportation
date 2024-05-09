@@ -61,8 +61,15 @@ ul li {
   text-decoration: none;
 }
 .error{
-  color: red;
+  
   text-decoration: solid;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+        color: #990000;
+        padding: 10px;
+        text-align: center;
 }
 
 .footerbox {

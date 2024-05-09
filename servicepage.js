@@ -21,8 +21,20 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   }
 
   // Display error messages if any
-  const errorMessageElement = document.getElementById("selectListError");
-  errorMessageElement.textContent = errorMessages.join(" ");
+  function displayErrorMessage(message) {
+   
+    const errorMessageElement = document.getElementById("selectListError");
+    errorMessageElement.textContent = errorMessages.join(" ");
+    document.body.appendChild(errorMessageElement);
+
+    // Set timer to remove error message after 5 seconds
+    const timerId = setTimeout(() => {
+        document.body.removeChild(errorMessageElement);
+        // Optional: Cleanup tasks associated with the timer
+        clearTimeout(timerId);
+    }, 5000); // 5 seconds in milliseconds
+}
+
 
   // Calculate total price if all inputs are valid
   if (isValid) {
