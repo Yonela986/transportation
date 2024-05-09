@@ -54,7 +54,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
    // Display submit message
    const submitMessageElement = document.createElement("div");
-   submitMessageElement.classList.add("submit-message");
+   submitMessageElement.classList.add("submit");
    submitMessageElement.textContent = "Form submitted successfully!"; // You can customize this message
 
    // Append the submit message to a container within the form
