@@ -8,17 +8,17 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const selectedTime = document.getElementById("selectedTime").value;
   const tripType = document.getElementById("tripType").value;
 
-  // Regex for alphabetic characters and spaces
-  const pickupOneRegex = /^[A-Za-z\s]+$/; 
-  const isValidPickupOne = pickupOneRegex.test(pickupOne);
-  const isValidDropOff = pickupOneRegex.test(dropOff);
-  // Check if any input fields are empty or if pickupOne format is invalid
-  if (!isValidPickupOne || !isValidDropOff) {
-    document.getElementById("pickupOneError").textContent = "Please enter a valid format";
-    return; // Stop further execution if format is invalid
-} else {
-    document.getElementById("pickupOneError").textContent = ""; // Clear error message if format is valid
-}
+//   // Regex for alphabetic characters and spaces
+//   const pickupOneRegex = /^[A-Za-z\s]+$/; 
+//   const isValidPickupOne = pickupOneRegex.test(pickupOne);
+//   const isValidDropOff = pickupOneRegex.test(dropOff);
+//   // Check if any input fields are empty or if pickupOne format is invalid
+//   if (!isValidPickupOne || !isValidDropOff) {
+//     document.getElementById("pickupOneError").textContent = "Please enter a valid format";
+//     return; // Stop further execution if format is invalid
+// } else {
+//     document.getElementById("pickupOneError").textContent = ""; // Clear error message if format is valid
+// }
   // Display error message
   const isEmpty =
     !selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType;
