@@ -30,22 +30,22 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   //     }
   //     clearTimeout(submitTimerId);
   // }, 5000); // 5 seconds in milliseconds
-   if(isEmpty) {
-    const errorMessageElement = document.createElement("div");
-    errorMessageElement.classList.add("error-message");
-    errorMessageElement.textContent = "Please fill in all fields.";
+  //  if(isEmpty) {
+  //   const errorMessageElement = document.createElement("div");
+  //   errorMessageElement.classList.add("error-message");
+  //   errorMessageElement.textContent = "Please fill in all fields.";
 
-    // Append the error message to a container within the form
-    const formContainer = document.getElementById("myForm");
-    formContainer.appendChild(errorMessageElement);
-    // Set timer to remove error message after 5 seconds
-    const timerId = setTimeout(() => {
-      if (errorMessageElement.parentNode === formContainer) {
-        formContainer.removeChild(errorMessageElement);
-      }
-      clearTimeout(timerId);
-    }, 5000); // 5 seconds in milliseconds
-  } else {
+  //   // Append the error message to a container within the form
+  //   const formContainer = document.getElementById("myForm");
+  //   formContainer.appendChild(errorMessageElement);
+  //   // Set timer to remove error message after 5 seconds
+  //   const timerId = setTimeout(() => {
+  //     if (errorMessageElement.parentNode === formContainer) {
+  //       formContainer.removeChild(errorMessageElement);
+  //     }
+  //     clearTimeout(timerId);
+  //   }, 5000); // 5 seconds in milliseconds
+  // } else {
     // If all inputs are filled, calculate total price
     const totalPrice = calculateTotalPrice(
       selectedOption,
@@ -59,7 +59,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     document.getElementById("total-price").textContent =
       "Total Price: " + totalPrice;
       console.log(totalPrice)
-  }
+  
 
 });
 
