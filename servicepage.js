@@ -30,7 +30,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
       }
       clearTimeout(submitTimerId);
   }, 5000); // 5 seconds in milliseconds
-   if(isEmpty) {
+   else if(isEmpty) {
     const errorMessageElement = document.createElement("div");
     errorMessageElement.classList.add("error-message");
     errorMessageElement.textContent = "Please fill in all fields.";
