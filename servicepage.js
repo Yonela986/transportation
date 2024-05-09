@@ -20,7 +20,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
     // Display error messages if any
     if (!isValid) {
-        const errorMessageElement = document.getElementsByClassName(".error");
+        const errorMessageElement = document.createElement("div");
         errorMessageElement.classList.add("error-message");
         errorMessageElement.textContent = errorMessages.join(" ");
         document.body.appendChild(errorMessageElement);
