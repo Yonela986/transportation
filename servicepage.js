@@ -13,39 +13,39 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const isEmpty =
     !selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType;
 
-  // if (!isEmpty){
-  // // Display submit message
-  // const submitMessageElement = document.createElement("div");
-  // submitMessageElement.classList.add("submit");
-  // submitMessageElement.textContent = "Form submitted successfully!"; // You can customize this message
-  // submitMessageElement.style.color = "green"; // Set color to green
-  // // Append the submit message to a container within the form
-  // const formContainer = document.getElementById("myForm");
-  // formContainer.appendChild(submitMessageElement);
+  if (!isEmpty){
+  // Display submit message
+  const submitMessageElement = document.createElement("div");
+  submitMessageElement.classList.add("submit");
+  submitMessageElement.textContent = "Form submitted successfully!"; // You can customize this message
+  submitMessageElement.style.color = "green"; // Set color to green
+  // Append the submit message to a container within the form
+  const formContainer = document.getElementById("myForm");
+  formContainer.appendChild(submitMessageElement);
 
-  // // Set timer to remove submit message after 5 seconds
-  // const submitTimerId = setTimeout(() => {
-  //     if (submitMessageElement.parentNode === formContainer) {
-  //         formContainer.removeChild(submitMessageElement);
-  //     }
-  //     clearTimeout(submitTimerId);
-  // }, 5000); // 5 seconds in milliseconds
-  //  if(isEmpty) {
-  //   const errorMessageElement = document.createElement("div");
-  //   errorMessageElement.classList.add("error-message");
-  //   errorMessageElement.textContent = "Please fill in all fields.";
+  // Set timer to remove submit message after 5 seconds
+  const submitTimerId = setTimeout(() => {
+      if (submitMessageElement.parentNode === formContainer) {
+          formContainer.removeChild(submitMessageElement);
+      }
+      clearTimeout(submitTimerId);
+  }, 5000); // 5 seconds in milliseconds
+   if(isEmpty) {
+    const errorMessageElement = document.createElement("div");
+    errorMessageElement.classList.add("error-message");
+    errorMessageElement.textContent = "Please fill in all fields.";
 
-  //   // Append the error message to a container within the form
-  //   const formContainer = document.getElementById("myForm");
-  //   formContainer.appendChild(errorMessageElement);
-  //   // Set timer to remove error message after 5 seconds
-  //   const timerId = setTimeout(() => {
-  //     if (errorMessageElement.parentNode === formContainer) {
-  //       formContainer.removeChild(errorMessageElement);
-  //     }
-  //     clearTimeout(timerId);
-  //   }, 5000); // 5 seconds in milliseconds
-  // } else {
+    // Append the error message to a container within the form
+    const formContainer = document.getElementById("myForm");
+    formContainer.appendChild(errorMessageElement);
+    // Set timer to remove error message after 5 seconds
+    const timerId = setTimeout(() => {
+      if (errorMessageElement.parentNode === formContainer) {
+        formContainer.removeChild(errorMessageElement);
+      }
+      clearTimeout(timerId);
+    }, 5000); // 5 seconds in milliseconds
+  } 
     // If all inputs are filled, calculate total price
     const totalPrice = calculateTotalPrice(
       selectedOption,
