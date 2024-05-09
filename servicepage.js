@@ -51,6 +51,23 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     document.getElementById("total-price").textContent =
       "Total Price: " + totalPrice;
   }
+
+   // Display submit message
+   const submitMessageElement = document.createElement("div");
+   submitMessageElement.classList.add("submit-message");
+   submitMessageElement.textContent = "Form submitted successfully!"; // You can customize this message
+
+   // Append the submit message to a container within the form
+   const formContainer = document.getElementById("myForm");
+   formContainer.appendChild(submitMessageElement);
+
+   // Set timer to remove submit message after 5 seconds
+   const submitTimerId = setTimeout(() => {
+       if (submitMessageElement.parentNode === formContainer) {
+           formContainer.removeChild(submitMessageElement);
+       }
+       clearTimeout(submitTimerId);
+   }, 5000); // 5 seconds in milliseconds
 });
 
 // Function to calculate total price (replace this with your own logic)
