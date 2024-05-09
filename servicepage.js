@@ -22,10 +22,12 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
  formContainer.appendChild(errorMessageElement);
     // Set timer to remove error message after 5 seconds
     const timerId = setTimeout(() => {
-      document.body.removeChild(errorMessageElement);
-      clearTimeout(timerId);
-    }, 5000); // 5 seconds in milliseconds
-  } else {
+      if (formContainer.contains(errorMessageElement)) {
+        formContainer.removeChild(errorMessageElement);
+    }
+    clearTimeout(timerId);
+}, 5000); // 5 seconds in milliseconds
+} else {
     // If all inputs are filled, calculate total price
     const totalPrice = calculateTotalPrice(
       selectedOption,
