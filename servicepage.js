@@ -23,7 +23,24 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const isEmpty =
     !selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType;
 
-  if (isEmpty) {
+  if (!isEmpty){
+  // Display submit message
+  const submitMessageElement = document.createElement("div");
+  submitMessageElement.classList.add("submit");
+  submitMessageElement.textContent = "Form submitted successfully!"; // You can customize this message
+  submitMessageElement.style.color = "green"; // Set color to green
+  // Append the submit message to a container within the form
+  const formContainer = document.getElementById("myForm");
+  formContainer.appendChild(submitMessageElement);
+
+  // Set timer to remove submit message after 5 seconds
+  const submitTimerId = setTimeout(() => {
+      if (submitMessageElement.parentNode === formContainer) {
+          formContainer.removeChild(submitMessageElement);
+      }
+      clearTimeout(submitTimerId);
+  }, 5000); // 5 seconds in milliseconds
+  }else if(isEmpty) {
     const errorMessageElement = document.createElement("div");
     errorMessageElement.classList.add("error-message");
     errorMessageElement.textContent = "Please fill in all fields.";
@@ -53,22 +70,22 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
       "Total Price: " + totalPrice;
   }
 
-   // Display submit message
-   const submitMessageElement = document.createElement("div");
-   submitMessageElement.classList.add("submit");
-   submitMessageElement.textContent = "Form submitted successfully!"; // You can customize this message
-   submitMessageElement.style.color = "green"; // Set color to green
-   // Append the submit message to a container within the form
-   const formContainer = document.getElementById("myForm");
-   formContainer.appendChild(submitMessageElement);
+  //  // Display submit message
+  //  const submitMessageElement = document.createElement("div");
+  //  submitMessageElement.classList.add("submit");
+  //  submitMessageElement.textContent = "Form submitted successfully!"; // You can customize this message
+  //  submitMessageElement.style.color = "green"; // Set color to green
+  //  // Append the submit message to a container within the form
+  //  const formContainer = document.getElementById("myForm");
+  //  formContainer.appendChild(submitMessageElement);
 
-   // Set timer to remove submit message after 5 seconds
-   const submitTimerId = setTimeout(() => {
-       if (submitMessageElement.parentNode === formContainer) {
-           formContainer.removeChild(submitMessageElement);
-       }
-       clearTimeout(submitTimerId);
-   }, 5000); // 5 seconds in milliseconds
+  //  // Set timer to remove submit message after 5 seconds
+  //  const submitTimerId = setTimeout(() => {
+  //      if (submitMessageElement.parentNode === formContainer) {
+  //          formContainer.removeChild(submitMessageElement);
+  //      }
+  //      clearTimeout(submitTimerId);
+  //  }, 5000); // 5 seconds in milliseconds
 });
 
 // Function to calculate total price (replace this with your own logic)
