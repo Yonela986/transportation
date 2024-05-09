@@ -161,9 +161,9 @@ ul li {
 }
 /* Form Container */
 #myForm {
-  max-width: 499px;
-  margin: 0;
-  padding: 0px;
+  width: 100%; /* Set the width of the form to 100% */
+  margin: 0; /* Remove any default margin */
+  padding: 0;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: Arial, sans-serif;
@@ -229,8 +229,12 @@ input[type="submit"]:hover {
   padding: 10px;
 }
 .form-group {
+  margin-bottom: 10px;
   margin-top: 2rem;
-  margin-bottom: 1rem; /* Adjust the spacing between form groups */
+  
+}
+.error-message {
+  display: none; /* Hide error messages by default */
 }
 
 .form-group label {
