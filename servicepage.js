@@ -10,26 +10,14 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   // Regex for alphabetic characters and spaces
   const pickupOneRegex = /^[A-Za-z\s]+$/; 
-  const isValidPickupOne = pickupOneRegex.test(pickupOne);
+  const isValidPickupOne = pickupOneRegex.test(pickupOne, dropOff);
   // Check if any input fields are empty or if pickupOne format is invalid
-  if (
-    !selectedOption ||
-    !pickupOne ||
-    !dropOff ||
-    !selectedTime ||
-    !tripType ||
-    !isValidPickupOne
-  ) {
-    // Display error message for pickupOne format
-    if (!isValidPickupOne) {
-      document.getElementById("pickupOneError").textContent =
-        "Please enter a valid format for Pickup One.";
-    } else {
-      document.getElementById("pickupOneError").textContent = ""; // Clear error message if format is valid
-    }
-    // Other validation logic...
-    return; // Prevent further execution if validation fails
-  }
+  if (!isValidPickupOne) {
+    document.getElementById("pickupOneError").textContent = "Please enter a valid format for Pickup One.";
+    return; // Stop further execution if format is invalid
+} else {
+    document.getElementById("pickupOneError").textContent = ""; // Clear error message if format is valid
+}
   // Display error message
   const isEmpty =
     !selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType;
