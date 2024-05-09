@@ -162,8 +162,8 @@ ul li {
 /* Form Container */
 #myForm {
   max-width: 499px;
-  margin: auto;
-  padding: 30px;
+  margin: 0;
+  padding: 0px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: Arial, sans-serif;
