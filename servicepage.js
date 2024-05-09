@@ -10,9 +10,10 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   // Regex for alphabetic characters and spaces
   const pickupOneRegex = /^[A-Za-z\s]+$/; 
-  const isValidPickupOne = pickupOneRegex.test(pickupOne, dropOff);
+  const isValidPickupOne = pickupOneRegex.test(pickupOne);
+  const isValidDropOff = pickupOneRegex.test(dropOff);
   // Check if any input fields are empty or if pickupOne format is invalid
-  if (!isValidPickupOne) {
+  if (!isValidPickupOne || !isValidDropOff) {
     document.querySelectorAll("pickupOneError").textContent = "Please enter a valid format";
     return; // Stop further execution if format is invalid
 } else {
