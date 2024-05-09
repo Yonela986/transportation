@@ -9,36 +9,91 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const tripType = document.getElementById("tripType").value;
 
 
-    // Validate each input field
-    let isValid = true;
-    const errorMessages = [];
+  //Error message when nothing has been selected
+  //Validate each input field
+  // Perform validation for missing inputs
+  let isValid = true;
+  const errorMessages = [];
 
-    if (!selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType) {
-        isValid = false;
-        errorMessages.push("Please fill in all fields.");
-    }
+  if (!selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType) {
+    isValid = false;
+    errorMessages.push("Please fill in all fields.");
+  }
 
-    // Display error messages if any
-    if (!isValid) {
-        const errorMessageElement = document.createElement("div");
-        errorMessageElement.classList.add("error-message");
-        errorMessageElement.textContent = errorMessages.join(" ");
-        document.body.appendChild(errorMessageElement);
+  // Display error messages if any
+  const errorMessageElement = document.getElementById("error-messages");
+  errorMessageElement.textContent = errorMessages.join(" ");
 
-        // Set timer to remove error message after 5 seconds
-        const timerId = setTimeout(() => {
-            document.body.removeChild(errorMessageElement);
-            clearTimeout(timerId);
-        }, 5000); // 5 seconds in milliseconds
-    } else {
-        // If all inputs are valid, calculate total price
-        const totalPrice = calculateTotalPrice(selectedOption, pickupOne, dropOff, selectedTime, tripType);
-        
-        // Update the total price element with the calculated result
-  
-        document.getElementById("total-price").textContent = `Total Price: R${totalPrice.toFixed(2)}`;
+  // Calculate total price if all inputs are valid
+  if (isValid) {
+    const totalPrice = calculateTotalPrice(
+      selectedOption,
+      pickupOne,
+      dropOff,
+      selectedTime,
+      tripType
+    );
 
-    }
+    // Update the total price element with the calculated result
+    document.getElementById("total-price").textContent =
+      "Total Price: " + totalPrice;
+  }
+//   let isValid = true;
+
+//   // Validate selectList
+//   if (!selectedOption) {
+//     document.getElementById("selectListError").textContent = "Please choose an option.";
+//     isValid = false;
+//   } else {
+//     document.getElementById("selectListError").textContent = "";
+//   }
+
+//   // Validate pickupOne
+//   if (!pickupOne) {
+//     document.getElementById("pickupOneError").textContent = "Please enter a pickup location.";
+//     isValid = false;
+//   } else {
+//     document.getElementById("pickupOneError").textContent = "";
+//   }
+
+//   // Validate pickupTwo
+//   if (!pickupTwo) {
+//     document.getElementById("pickupTwoError").textContent = "Please enter a drop-off location.";
+//     isValid = false;
+//   } else {
+//     document.getElementById("pickupTwoError").textContent = "";
+//   }
+
+//   // Validate selectedTime
+//   if (!selectedTime) {
+//     document.getElementById("selectedTimeError").textContent = "Please select a time.";
+//     isValid = false;
+//   } else {
+//     document.getElementById("selectedTimeError").textContent = "";
+//   }
+
+//   // Validate tripType
+//   if (!tripType) {
+//     document.getElementById("tripTypeError").textContent = "Please select a trip type.";
+//     isValid = false;
+//   } else {
+//     document.getElementById("tripTypeError").textContent = "";
+//   }
+
+//   // Perform calculations based on user inputs (this is a placeholder)
+//   // You need to implement your own logic for calculating the total price
+//  if(isValid){
+//   const totalPrice = calculateTotalPrice(
+//     selectedOption,
+//     pickupOne,
+//     dropOff,
+//     selectedTime,
+//     tripType
+//   );
+//    // Update the total price element with the calculated result
+//    document.getElementById("total-price").textContent =
+//    "Total Price: " + totalPrice;
+//  } 
 
  
 });
