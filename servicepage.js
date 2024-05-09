@@ -16,6 +16,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     const errorMessageElement = document.createElement("div");
     errorMessageElement.classList.add("error-message");
     errorMessageElement.textContent = "Please fill in all fields.";
+    errorMessageElement.id = "error-message";
     document.body.appendChild(errorMessageElement);
     console.log(errorMessageElement);
 
