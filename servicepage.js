@@ -58,6 +58,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     // Update the total price element with the calculated result
     document.getElementById("total-price").textContent =
       "Total Price: " + totalPrice;
+      console.log(totalPrice);
   }
 
 });
