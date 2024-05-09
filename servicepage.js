@@ -19,6 +19,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 // } else {
 //     document.getElementById("pickupOneError").textContent = ""; // Clear error message if format is valid
 // }
+
   // Display error message
   const isEmpty =
     !selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType;
