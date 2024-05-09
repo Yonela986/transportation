@@ -20,7 +20,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
     // Display error messages if any
     if (!isValid) {
-        const errorMessageElement = document.getElementsByClassName("error");
+        const errorMessageElement = document.createElement("div");
         errorMessageElement.classList.add("error-message");
         errorMessageElement.textContent = errorMessages.join(" ");
         document.body.appendChild(errorMessageElement);
@@ -35,7 +35,9 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
         const totalPrice = calculateTotalPrice(selectedOption, pickupOne, dropOff, selectedTime, tripType);
         
         // Update the total price element with the calculated result
-        document.getElementById("total-price").textContent = "Total Price: " + totalPrice;
+  
+        document.getElementById("total-price").textContent = `Total Price: R${totalPrice.toFixed(2)}`;
+
     }
 
  
