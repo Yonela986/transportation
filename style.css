@@ -204,6 +204,7 @@ input[type="submit"] {
   display: block;
   width: 100%;
   padding: 10px;
+  margin-top: 2rem;
   background-color: #474747;
   color: #fff;
   border: none;
@@ -238,9 +239,7 @@ input[type="submit"]:hover {
   margin-bottom: 1rem; /* Adjust the spacing between inputs/selects and the next form element */
 }
 
-button[type="submit"] {
-  margin-top: 2rem; /* Adjust the spacing between the last form element and the submit button */
-}
+
 /*contact page*/
 #contactContainer {
   max-width: 599px;
@@ -264,9 +263,6 @@ h2 {
   text-align: center;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
 
 label {
   display: block;
