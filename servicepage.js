@@ -145,4 +145,5 @@ function calculateTotalPrice(
   document.getElementById(
     "total-price"
   ).textContent = `Total Price: R${totalPrice.toFixed(2)}`;
+  console.log(totalPrice);
 }
