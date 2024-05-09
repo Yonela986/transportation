@@ -116,6 +116,7 @@
       
         <p>Please select the options below to get the Price for your ride.</p>
         <div class="form-group">
+          <span id="selectListError" class="error"></span>
           <label for="selectList">Choose an option:</label>
           <input list="options" id="selectList" name="selectList" class="form-control">
           <datalist id="options">
@@ -123,25 +124,25 @@
             <option value="Bus">Bus</option>
             <option value="Train">Train</option>
           </datalist>
-          <span id="selectListError" class="error"></span>
+         
         </div>
     
         <div class="form-group">
           <label for="pickupOne">Pickup One:</label>
           <input id="pickupOne" type="text" name="placeholder1" class="form-control" placeholder="Enter some text">
-          <span id="selectListError" class="error"></span>
+          
         </div>
         
         <div class="form-group">
           <label for="pickupTwo">Pickup Two:</label>
           <input id="pickupTwo" type="text" name="placeholder2" class="form-control" placeholder="Enter more text">
-          <span id="selectListError" class="error"></span>
+        
         </div>
            
         <div class="form-group">
           <label for="selectedTime">Select Time:</label>
           <input type="time" id="selectedTime" class="form-control">
-          <span id="selectListError" class="error"></span>
+      
         </div>
     
         <div class="form-group">
@@ -150,7 +151,7 @@
             <option value="oneWay">One Way</option>
             <option value="returnTrip">Return Trip</option>
           </select>
-          <span id="selectListError" class="error"></span>
+          
         </div>
         
         <input type="submit" value="Submit" class="btn btn-primary">
