@@ -47,7 +47,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     }, 5000); // 5 seconds in milliseconds
   } else {
     // If all inputs are filled, calculate total price
-    const totalPrice = calculateTotalPrice(
+    const totalPrice = new calculateTotalPrice(
       selectedOption,
       pickupOne,
       dropOff,
@@ -56,9 +56,9 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     );
 
     // Update the total price element with the calculated result
-    //document.getElementById("total-price").textContent =
-     // "Total Price: " + totalPrice;
-     // console.log(totalPrice);
+    document.getElementById("total-price").textContent =
+      "Total Price: " + totalPrice;
+      console.log(totalPrice)
   }
 
 });
