@@ -21,7 +21,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   }
 
   // Display error messages if any
-  function displayErrorMessage(message) {
+ 
    
     const errorMessageElement = document.getElementById("selectListError");
     errorMessageElement.textContent = errorMessages.join(" ");
@@ -33,7 +33,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
         // Optional: Cleanup tasks associated with the timer
         clearTimeout(timerId);
     }, 5000); // 5 seconds in milliseconds
-}
+
 
 
   // Calculate total price if all inputs are valid
