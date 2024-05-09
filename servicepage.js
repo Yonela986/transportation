@@ -56,7 +56,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
    const submitMessageElement = document.createElement("div");
    submitMessageElement.classList.add("submit");
    submitMessageElement.textContent = "Form submitted successfully!"; // You can customize this message
-
+   submitMessageElement.style.color = "green"; // Set color to green
    // Append the submit message to a container within the form
    const formContainer = document.getElementById("myForm");
    formContainer.appendChild(submitMessageElement);

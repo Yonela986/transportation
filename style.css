@@ -58,13 +58,7 @@ ul li {
   padding: 10px 20px;
   text-decoration: none;
 }
-.error-message {
-  text-decoration: solid;
-  width: 100%;
-  color: #990000;
-  padding: 10px;
-  text-align: center;
-}
+
 
 .footerbox {
   text-align: center;
@@ -220,6 +214,13 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #0a0a0a;
+}
+.error-message {
+  text-decoration: solid;
+  width: 100%;
+  color: #990000;
+  padding: 10px;
+  text-align: center;
 }
 /*contact page*/
 #contactContainer {
