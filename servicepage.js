@@ -8,6 +8,13 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const selectedTime = document.getElementById("selectedTime").value;
   const tripType = document.getElementById("tripType").value;
 
+  // Save form data to local storage
+  localStorage.setItem('selectedOption', selectedOption);
+  localStorage.setItem('pickupOne', pickupOne);
+  localStorage.setItem('dropOff', dropOff);
+  localStorage.setItem('selectedTime', selectedTime);
+  localStorage.setItem('tripType', tripType);
+
 
   // Display error message
   const isEmpty =
@@ -125,10 +132,8 @@ function calculateTotalPrice(
     }
   }
 
-  // This is just a placeholder function. You need to implement your own logic.
-  // For example, you can calculate the total price based on the selected option, time, trip type, etc.
+  
   // Here, I'm just returning a static value for demonstration purposes.
-  // const totalPrice = basePrice + peakHoursSurcharge + returnTripSurcharge;
 
   // Display the total price
 
