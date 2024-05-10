@@ -15,6 +15,13 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   localStorage.setItem('selectedTime', selectedTime);
   localStorage.setItem('tripType', tripType);
 
+  // Check if data is saved correctly
+  console.log('Data saved to local storage:');
+  console.log('selectedOption:', selectedOption);
+  console.log('pickupOne:', pickupOne);
+  console.log('dropOff:', dropOff);
+  console.log('selectedTime:', selectedTime);
+  console.log('tripType:', tripType);
 
   // Display error message
   const isEmpty =
