@@ -20,8 +20,11 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   // Clear form fields after 3 seconds
   setTimeout(() => {
-    nameInput.value = '';
-    emailInput.value = '';
+    selectedOption.value = '';
+    pickupOne.value = '';
+    dropOff.value = '';
+    selectedTime.value = '';
+    tripType.value = '';
   }, 3000);
 
 // Load form data from local storage on page load
