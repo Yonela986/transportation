@@ -99,11 +99,12 @@ window.addEventListener('load', () => {
     );
 
     // Update the total price element with the calculated result
+
     document.getElementById("total-price").textContent =
       "Total Price: " + totalPrice;
       console.log(totalPrice)
   
-
+document.getElementById("myForm").reset();
 });
 
 // Function to calculate total price (replace this with your own logic)
