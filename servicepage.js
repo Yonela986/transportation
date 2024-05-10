@@ -16,28 +16,29 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     selectedTime: selectedTime.value,
     tripType: tripType.value
   };
-  localStorage.setItem('formData', JSON.stringify(formData));
+  localStorage.setItem("formData", formData);
+  document.getElementById("myForm").reset();
 
-  // Clear form fields after 3 seconds
-  setTimeout(() => {
-    selectedOption.value = '';
-    pickupOne.value = '';
-    dropOff.value = '';
-    selectedTime.value = '';
-    tripType.value = '';
-  }, 3000);
+//   // Clear form fields after 3 seconds
+//   setTimeout(() => {
+//     selectedOption.value = '';
+//     pickupOne.value = '';
+//     dropOff.value = '';
+//     selectedTime.value = '';
+//     tripType.value = '';
+//   }, 3000);
 
-// Load form data from local storage on page load
-window.addEventListener('load', () => {
-  const storedFormData = JSON.parse(localStorage.getItem('formData'));
-  if (storedFormData) {
-    selectedOption.value = storedFormData.selectList;
-    pickupOne.value = storedFormData.pickupOne;
-    dropOff.value = storedFormData.pickupTwo;
-    selectedTime.value = storedFormData.selectedTime;
-    tripType.value = storedFormData.tripType;
-  }
-});
+// // Load form data from local storage on page load
+// window.addEventListener('load', () => {
+//   const storedFormData = JSON.parse(localStorage.getItem('formData'));
+//   if (storedFormData) {
+//     selectedOption.value = storedFormData.selectList;
+//     pickupOne.value = storedFormData.pickupOne;
+//     dropOff.value = storedFormData.pickupTwo;
+//     selectedTime.value = storedFormData.selectedTime;
+//     tripType.value = storedFormData.tripType;
+//   }
+// });
   // localStorage.setItem('selectedOption', selectedOption);
   // localStorage.setItem('pickupOne', pickupOne);
   // localStorage.setItem('dropOff', dropOff);
@@ -104,7 +105,7 @@ window.addEventListener('load', () => {
       "Total Price: " + totalPrice;
       console.log(totalPrice)
   
-document.getElementById("myForm").reset();
+
 });
 
 // Function to calculate total price (replace this with your own logic)
