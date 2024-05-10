@@ -6,14 +6,40 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const pickupOne = document.getElementById("pickupOne").value;
   const dropOff = document.getElementById("pickupTwo").value;
   const selectedTime = document.getElementById("selectedTime").value;
-  const tripType = document.getElementById("tripType").value;
+  const tripType = document.getElementById("").value;
 
   // Save form data to local storage
-  localStorage.setItem('selectedOption', selectedOption);
-  localStorage.setItem('pickupOne', pickupOne);
-  localStorage.setItem('dropOff', dropOff);
-  localStorage.setItem('selectedTime', selectedTime);
-  localStorage.setItem('tripType', tripType);
+  const formData = {
+    selectList: selectedOption.value,
+    pickupOne: pickupOne.value,
+    pickupTwo: dropOff.value,
+    selectedTime: selectedTime.value,
+    tripType: tripType.value
+  };
+  localStorage.setItem('formData', JSON.stringify(formData));
+
+  // Clear form fields after 3 seconds
+  setTimeout(() => {
+    nameInput.value = '';
+    emailInput.value = '';
+  }, 3000);
+});
+// Load form data from local storage on page load
+window.addEventListener('load', () => {
+  const storedFormData = JSON.parse(localStorage.getItem('formData'));
+  if (storedFormData) {
+    selectedOption.value = storedFormData.selectList;
+    pickupOne.value = storedFormData.pickupOne;
+    dropOff.value = storedFormData.pickupTwo;
+    selectedTime.value = storedFormData.selectedTime;
+    tripType.value = storedFormData.tripType;
+  }
+});
+  // localStorage.setItem('selectedOption', selectedOption);
+  // localStorage.setItem('pickupOne', pickupOne);
+  // localStorage.setItem('dropOff', dropOff);
+  // localStorage.setItem('selectedTime', selectedTime);
+  // localStorage.setItem('tripType', tripType);
 
   // Check if data is saved correctly
   console.log('Data saved to local storage:');
@@ -43,7 +69,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
           formContainer.removeChild(submitMessageElement);
       }
       clearTimeout(submitTimerId);
-  }, 5000); // 5 seconds in milliseconds
+  }, 3000); // 5 seconds in milliseconds
    }if(isEmpty) {
     const errorMessageElement = document.createElement("div");
     errorMessageElement.classList.add("error-message");
@@ -58,7 +84,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
         formContainer.removeChild(errorMessageElement);
       }
       clearTimeout(timerId);
-    }, 5000); // 5 seconds in milliseconds
+    }, 3000); // 5 seconds in milliseconds
   } 
     // If all inputs are filled, calculate total price
     const totalPrice = calculateTotalPrice(
