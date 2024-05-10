@@ -23,7 +23,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     nameInput.value = '';
     emailInput.value = '';
   }, 3000);
-});
+
 // Load form data from local storage on page load
 window.addEventListener('load', () => {
   const storedFormData = JSON.parse(localStorage.getItem('formData'));
