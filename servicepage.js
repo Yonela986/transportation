@@ -6,7 +6,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const pickupOne = document.getElementById("pickupOne").value;
   const dropOff = document.getElementById("pickupTwo").value;
   const selectedTime = document.getElementById("selectedTime").value;
-  const tripType = document.getElementById("").value;
+  const tripType = document.getElementById("tripType").value;
 
   // Save form data to local storage
   const formData = {
