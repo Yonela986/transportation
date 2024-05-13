@@ -8,16 +8,16 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const selectedTime = document.getElementById("selectedTime").value;
   const tripType = document.getElementById("tripType").value;
 
-  // Save form data to local storage
-  const formData = {
-    selectList: selectedOption.value,
-    pickupOne: pickupOne.value,
-    pickupTwo: dropOff.value,
-    selectedTime: selectedTime.value,
-    tripType: tripType.value
-  };
-  localStorage.setItem("formData", formData);
-  document.getElementById("myForm").reset();
+  // // Save form data to local storage
+  // const formData = {
+  //   selectList: selectedOption.value,
+  //   pickupOne: pickupOne.value,
+  //   pickupTwo: dropOff.value,
+  //   selectedTime: selectedTime.value,
+  //   tripType: tripType.value
+  // };
+  // localStorage.setItem("formData", formData);
+  // document.getElementById("myForm").reset();
 
 //   // Clear form fields after 3 seconds
 //   setTimeout(() => {
@@ -29,21 +29,41 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 //   }, 3000);
 
 // // Load form data from local storage on page load
-window.addEventListener('load', () => {
-  const storedFormData = JSON.parse(localStorage.getItem('formData'));
-  if (storedFormData) {
-    selectedOption.value = storedFormData.selectList;
-    pickupOne.value = storedFormData.pickupOne;
-    dropOff.value = storedFormData.pickupTwo;
-    selectedTime.value = storedFormData.selectedTime;
-    tripType.value = storedFormData.tripType;
-  }
-});
-  localStorage.setItem('selectedOption', selectedOption);
-  localStorage.setItem('pickupOne', pickupOne);
-  localStorage.setItem('dropOff', dropOff);
-  localStorage.setItem('selectedTime', selectedTime);
-  localStorage.setItem('tripType', tripType);
+// window.addEventListener('load', () => {
+//   const storedFormData = JSON.parse(localStorage.getItem('formData'));
+//   if (storedFormData) {
+//     selectedOption.value = storedFormData.selectList;
+//     pickupOne.value = storedFormData.pickupOne;
+//     dropOff.value = storedFormData.pickupTwo;
+//     selectedTime.value = storedFormData.selectedTime;
+//     tripType.value = storedFormData.tripType;
+//   }
+// });
+//   localStorage.setItem('selectedOption', selectedOption);
+//   localStorage.setItem('pickupOne', pickupOne);
+//   localStorage.setItem('dropOff', dropOff);
+//   localStorage.setItem('selectedTime', selectedTime);
+//   localStorage.setItem('tripType', tripType);
+// Retrieve values from form elements
+const selectedOptionValue = selectedOption.value;
+const pickupOneValue = pickupOne.value;
+const dropOffValue = dropOff.value;
+const selectedTimeValue = selectedTime.value;
+const tripTypeValue = tripType.value;
+
+// Create an object to hold the form data
+const formData = {
+    selectList: selectedOptionValue,
+    pickupOne: pickupOneValue,
+    pickupTwo: dropOffValue,
+    selectedTime: selectedTimeValue,
+    tripType: tripTypeValue
+};
+
+// Store the form data in localStorage
+localStorage.setItem("formData", JSON.stringify(formData));
+   document.getElementById("myForm").reset();
+
 
   // Check if data is saved correctly
   console.log('Data saved to local storage:');
