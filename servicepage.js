@@ -29,21 +29,21 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 //   }, 3000);
 
 // // Load form data from local storage on page load
-// window.addEventListener('load', () => {
-//   const storedFormData = JSON.parse(localStorage.getItem('formData'));
-//   if (storedFormData) {
-//     selectedOption.value = storedFormData.selectList;
-//     pickupOne.value = storedFormData.pickupOne;
-//     dropOff.value = storedFormData.pickupTwo;
-//     selectedTime.value = storedFormData.selectedTime;
-//     tripType.value = storedFormData.tripType;
-//   }
-// });
-  // localStorage.setItem('selectedOption', selectedOption);
-  // localStorage.setItem('pickupOne', pickupOne);
-  // localStorage.setItem('dropOff', dropOff);
-  // localStorage.setItem('selectedTime', selectedTime);
-  // localStorage.setItem('tripType', tripType);
+window.addEventListener('load', () => {
+  const storedFormData = JSON.parse(localStorage.getItem('formData'));
+  if (storedFormData) {
+    selectedOption.value = storedFormData.selectList;
+    pickupOne.value = storedFormData.pickupOne;
+    dropOff.value = storedFormData.pickupTwo;
+    selectedTime.value = storedFormData.selectedTime;
+    tripType.value = storedFormData.tripType;
+  }
+});
+  localStorage.setItem('selectedOption', selectedOption);
+  localStorage.setItem('pickupOne', pickupOne);
+  localStorage.setItem('dropOff', dropOff);
+  localStorage.setItem('selectedTime', selectedTime);
+  localStorage.setItem('tripType', tripType);
 
   // Check if data is saved correctly
   console.log('Data saved to local storage:');
