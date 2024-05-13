@@ -1,49 +1,14 @@
 document.getElementById("myForm").addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent form submission
 
-  // Retrieve user inputs
+  // Retrieve user inputs values of each form element and store them in separate variables.
   const selectedOption = document.getElementById("selectList").value;
   const pickupOne = document.getElementById("pickupOne").value;
   const dropOff = document.getElementById("pickupTwo").value;
   const selectedTime = document.getElementById("selectedTime").value;
   const tripType = document.getElementById("tripType").value;
 
-  // // Save form data to local storage
-  // const formData = {
-  //   selectList: selectedOption.value,
-  //   pickupOne: pickupOne.value,
-  //   pickupTwo: dropOff.value,
-  //   selectedTime: selectedTime.value,
-  //   tripType: tripType.value
-  // };
-  // localStorage.setItem("formData", formData);
-  // document.getElementById("myForm").reset();
-
-//   // Clear form fields after 3 seconds
-//   setTimeout(() => {
-//     selectedOption.value = '';
-//     pickupOne.value = '';
-//     dropOff.value = '';
-//     selectedTime.value = '';
-//     tripType.value = '';
-//   }, 3000);
-
-// // Load form data from local storage on page load
-// window.addEventListener('load', () => {
-//   const storedFormData = JSON.parse(localStorage.getItem('formData'));
-//   if (storedFormData) {
-//     selectedOption.value = storedFormData.selectList;
-//     pickupOne.value = storedFormData.pickupOne;
-//     dropOff.value = storedFormData.pickupTwo;
-//     selectedTime.value = storedFormData.selectedTime;
-//     tripType.value = storedFormData.tripType;
-//   }
-// });
-//   localStorage.setItem('selectedOption', selectedOption);
-//   localStorage.setItem('pickupOne', pickupOne);
-//   localStorage.setItem('dropOff', dropOff);
-//   localStorage.setItem('selectedTime', selectedTime);
-//   localStorage.setItem('tripType', tripType);
+  
 // Retrieve values from form elements
 const selectedOptionValue = selectedOption.value;
 const pickupOneValue = pickupOne.value;
@@ -60,7 +25,7 @@ const formData = {
     tripType: tripTypeValue
 };
 
-// Store the form data in localStorage
+// Store the form data in localStorage after converting it to a JSON string using JSON.stringify()
 localStorage.setItem("formData", JSON.stringify(formData));
    document.getElementById("myForm").reset();
 
