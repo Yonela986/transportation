@@ -24,19 +24,53 @@ const formData = {
     selectedTime: selectedTimeValue,
     tripType: tripTypeValue
 };
+// const insertQuery = `INSERT INTO formData (selectList, pickupOne, pickupTwo, selectedTime, tripType) VALUES (?, ?, ?, ?, ?)`;
+// const values = [
+//   formData.selectList,
+//   formData.pickupOne,
+//   formData.pickupTwo,
+//   formData.selectedTime,
+//   formData.tripType
+// ];
+
+// // Execute the SQL query to insert the data into the SQLite database
+// const sqlite3 = require('sqlite3').verbose();
+// const db = new sqlite3.Database('myDB.sql');
+
+// db.run(insertQuery, values, function(err) {
+//   if (err) {
+//     console.error('Error inserting data into SQLite table:', err.message);
+//   } else {
+//     console.log(`Rows inserted: ${this.changes}`);
+//   }
+// });
+
+// // Close the database connection
+// db.close();
+
+// Reset the form
+//document.getElementById("myForm").reset();
+
+// Check if data is saved correctly
+console.log('Data saved to SQLite database:');
+console.log('selectedOption:', selectedOption);
+console.log('pickupOne:', pickupOne);
+console.log('dropOff:', dropOff);
+console.log('selectedTime:', selectedTime);
+console.log('tripType:', tripType);
 
 // Store the form data in localStorage after converting it to a JSON string using JSON.stringify()
 localStorage.setItem("formData", JSON.stringify(formData));
    document.getElementById("myForm").reset();
 
 
-  // Check if data is saved correctly
-  console.log('Data saved to local storage:');
-  console.log('selectedOption:', selectedOption);
-  console.log('pickupOne:', pickupOne);
-  console.log('dropOff:', dropOff);
-  console.log('selectedTime:', selectedTime);
-  console.log('tripType:', tripType);
+//   // Check if data is saved correctly
+//   console.log('Data saved to local storage:');
+//   console.log('selectedOption:', selectedOption);
+//   console.log('pickupOne:', pickupOne);
+//   console.log('dropOff:', dropOff);
+//   console.log('selectedTime:', selectedTime);
+//   console.log('tripType:', tripType);
 
   // Display error message
   const isEmpty =
