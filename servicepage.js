@@ -42,7 +42,6 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   // Close the database connection
   // db.close();
-
   //Reset the form
   document.getElementById("myForm").reset();
 
