@@ -299,7 +299,7 @@ ul li {
 } 
 
 /* Datalist/Select List */
-#selectList {
+/* #selectList {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -307,7 +307,7 @@ ul li {
   margin-bottom: 10px;
 }
 
-/* Placeholders */
+/* Placeholders *
 input[type="text"] {
   width: 100%;
   padding: 8px;
@@ -321,14 +321,14 @@ input[type="text"]::placeholder {
   color: #999;
 }
 
-/* Checkboxes */
+/* Checkboxes *
 input[type="checkbox"] {
   margin-top: 2rem;
   margin-right: 8px;
   margin-bottom: 10px;
 }
 
-/* Submit Button */
+/* Submit Button *
 input[type="submit"] {
   display: block;
   width: 100%;
@@ -340,7 +340,7 @@ input[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-}
+} */
 
 input[type="submit"]:hover {
   background-color: #0a0a0a;
@@ -352,24 +352,22 @@ input[type="submit"]:hover {
   padding: 10px;
   text-align: center;
 }
-.container{
-  padding: 10px;
-}
-.form-group {
+
+/* .form-group {
   margin-top: -2rem;
-  margin-bottom: 1rem; /* Adjust the spacing between form groups */
+  margin-bottom: 1rem; /* Adjust the spacing between form groups *
 }
 
 .form-group label {
   margin-top: -2rem;
-  margin-bottom: 0.5rem; /* Adjust the spacing between labels and inputs */
+  margin-bottom: 0.5rem; /* Adjust the spacing between labels and inputs *
 }
 
 .form-group input,
 .form-group select {
   margin-top: -2rem;
-  margin-bottom: 1rem; /* Adjust the spacing between inputs/selects and the next form element */
-}
+  margin-bottom: 1rem; /* Adjust the spacing between inputs/selects and the next form element *
+} */
 
 
 /*contact page*/
