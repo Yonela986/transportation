@@ -12,11 +12,11 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   
 // Retrieve values from form elements
-// const selectedOptionValue = selectedOption.value;
-// const pickupOneValue = pickupOne.value;
-// const dropOffValue = dropOff.value;
-// const selectedTimeValue = selectedTime.value;
-// const tripTypeValue = tripType.value;
+const selectedOptionValue = selectedOption.value;
+const pickupOneValue = pickupOne.value;
+const dropOffValue = dropOff.value;
+const selectedTimeValue = selectedTime.value;
+const tripTypeValue = tripType.value;
 
 // Create an object to hold the form data
 const formData = {
@@ -28,17 +28,17 @@ const formData = {
 };
 
 // Insert form data into the database
-db.insertFormData(formData, function(err, changes) {
-  if (err) {
-      // Handle error
-      console.error('Error inserting form data:', err);
-  } else {
-      // Data inserted successfully
-      console.log('Rows inserted:', changes);
-      // Reset the form
-      document.getElementById("myForm").reset();
-  }
-});
+// db.insertFormData(formData, function(err, changes) {
+//   if (err) {
+//       // Handle error
+//       console.error('Error inserting form data:', err);
+//   } else {
+//       // Data inserted successfully
+//       console.log('Rows inserted:', changes);
+//       // Reset the form
+//       document.getElementById("myForm").reset();
+//   }
+// });
 // // Execute the SQL query to insert the data into the SQLite database
 
 // Close the database connection
@@ -47,26 +47,19 @@ db.insertFormData(formData, function(err, changes) {
 //Reset the form
 //document.getElementById("myForm").reset();
 
-// Check if data is saved correctly
-console.log('Data saved to SQLite database:');
-console.log('selectedOption:', selectedOption);
-console.log('pickupOne:', pickupOne);
-console.log('dropOff:', dropOff);
-console.log('selectedTime:', selectedTime);
-console.log('tripType:', tripType);
 
 // Store the form data in localStorage after converting it to a JSON string using JSON.stringify()
-// localStorage.setItem("formData", JSON.stringify(formData));
-//    document.getElementById("myForm").reset();
+localStorage.setItem("formData", JSON.stringify(formData));
+   document.getElementById("myForm").reset();
 
 
 //   // Check if data is saved correctly
-//   console.log('Data saved to local storage:');
-//   console.log('selectedOption:', selectedOption);
-//   console.log('pickupOne:', pickupOne);
-//   console.log('dropOff:', dropOff);
-//   console.log('selectedTime:', selectedTime);
-//   console.log('tripType:', tripType);
+  console.log('Data saved to local storage:');
+  console.log('selectedOption:', selectedOption);
+  console.log('pickupOne:', pickupOne);
+  console.log('dropOff:', dropOff);
+  console.log('selectedTime:', selectedTime);
+  console.log('tripType:', tripType);
 
   // Display error message
   const isEmpty =
@@ -186,8 +179,6 @@ function calculateTotalPrice(
   }
 
   
-  // Here, I'm just returning a static value for demonstration purposes.
-
   // Display the total price
 
   document.getElementById(
