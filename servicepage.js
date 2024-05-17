@@ -45,7 +45,7 @@ db.insertFormData(formData, function(err, changes) {
 // db.close();
 
 //Reset the form
-//document.getElementById("myForm").reset();
+document.getElementById("myForm").reset();
 
 // Check if data is saved correctly
 console.log('Data saved to SQLite database:');
@@ -184,9 +184,6 @@ function calculateTotalPrice(
       }
     }
   }
-
-  
-  // Here, I'm just returning a static value for demonstration purposes.
 
   // Display the total price
 
