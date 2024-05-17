@@ -279,7 +279,6 @@ ul li {
 
 #rideDetails {
   background-image: url("./images/taxis_resized.jpg");
-
   min-height: 50rem;
   opacity: 8;
   text-align: center;
@@ -357,18 +356,18 @@ input[type="submit"]:hover {
   padding: 10px;
 }
 .form-group {
-  margin-top: 2rem;
+  margin-top: -2rem;
   margin-bottom: 1rem; /* Adjust the spacing between form groups */
 }
 
 .form-group label {
-  margin-top: 2rem;
+  margin-top: -2rem;
   margin-bottom: 0.5rem; /* Adjust the spacing between labels and inputs */
 }
 
 .form-group input,
 .form-group select {
-  margin-top: 2rem;
+  margin-top: -2rem;
   margin-bottom: 1rem; /* Adjust the spacing between inputs/selects and the next form element */
 }
 
