@@ -1,4 +1,4 @@
-const db = require('./myDB.sql');
+import { insertFormData } from './myDB.sql';
 
 document.getElementById("myForm").addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent form submission
@@ -23,7 +23,7 @@ const formData = {
 };
 
 // Insert form data into the database
-db.insertFormData(formData, function(err, changes) {
+  insertFormData(formData, function(err, changes) {
   if (err) {
       // Handle error
       console.error('Error inserting form data:', err);
