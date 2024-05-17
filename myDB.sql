@@ -36,7 +36,7 @@ function insertFormData(formData, callback) {
 
 
 module.exports = {
-    insertFormData
+    insertFormData: insertFormData
 };
 
 -- db.run(`INSERT INTO formData (selectedOption, pickupOne, dropOff, selectedTime,tripType) VALUES (?, ?, ?)`, [
