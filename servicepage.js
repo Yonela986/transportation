@@ -1,4 +1,4 @@
-const db = require('./myDB.sql');
+const db = require("./myDB.sql");
 
 document.getElementById("myForm").addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent form submission
@@ -10,86 +10,85 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const selectedTime = document.getElementById("selectedTime").value;
   const tripType = document.getElementById("tripType").value;
 
-  
-// Retrieve values from form elements
-// const selectedOptionValue = selectedOption.value;
-// const pickupOneValue = pickupOne.value;
-// const dropOffValue = dropOff.value;
-// const selectedTimeValue = selectedTime.value;
-// const tripTypeValue = tripType.value;
+  // Retrieve values from form elements
+  // const selectedOptionValue = selectedOption.value;
+  // const pickupOneValue = pickupOne.value;
+  // const dropOffValue = dropOff.value;
+  // const selectedTimeValue = selectedTime.value;
+  // const tripTypeValue = tripType.value;
 
-// Create an object to hold the form data
-const formData = {
-  selectList: selectedOption,
-  pickupOne: pickupOne,
-  pickupTwo: dropOff,
-  selectedTime: selectedTime,
-  tripType: tripType
-};
+  // Create an object to hold the form data
+  const formData = {
+    selectList: selectedOption,
+    pickupOne: pickupOne,
+    pickupTwo: dropOff,
+    selectedTime: selectedTime,
+    tripType: tripType,
+  };
 
-// Insert form data into the database
-db.insertFormData(formData, function(err, changes) {
-  if (err) {
+  // Insert form data into the database
+  db.insertFormData(formData, function (err, changes) {
+    if (err) {
       // Handle error
-      console.error('Error inserting form data:', err);
-  } else {
+      console.error("Error inserting form data:", err);
+    } else {
       // Data inserted successfully
-      console.log('Rows inserted:', changes);
+      console.log("Rows inserted:", changes);
       // Reset the form
       document.getElementById("myForm").reset();
-  }
-});
-// // Execute the SQL query to insert the data into the SQLite database
+    }
+  });
+  // // Execute the SQL query to insert the data into the SQLite database
 
-// Close the database connection
-// db.close();
+  // Close the database connection
+  // db.close();
 
-//Reset the form
-document.getElementById("myForm").reset();
+  //Reset the form
+  document.getElementById("myForm").reset();
 
-// Check if data is saved correctly
-console.log('Data saved to SQLite database:');
-console.log('selectedOption:', selectedOption);
-console.log('pickupOne:', pickupOne);
-console.log('dropOff:', dropOff);
-console.log('selectedTime:', selectedTime);
-console.log('tripType:', tripType);
+  // Check if data is saved correctly
+  console.log("Data saved to SQLite database:");
+  console.log("selectedOption:", selectedOption);
+  console.log("pickupOne:", pickupOne);
+  console.log("dropOff:", dropOff);
+  console.log("selectedTime:", selectedTime);
+  console.log("tripType:", tripType);
 
-// Store the form data in localStorage after converting it to a JSON string using JSON.stringify()
-// localStorage.setItem("formData", JSON.stringify(formData));
-//    document.getElementById("myForm").reset();
+  // Store the form data in localStorage after converting it to a JSON string using JSON.stringify()
+  // localStorage.setItem("formData", JSON.stringify(formData));
+  //    document.getElementById("myForm").reset();
 
-
-//   // Check if data is saved correctly
-//   console.log('Data saved to local storage:');
-//   console.log('selectedOption:', selectedOption);
-//   console.log('pickupOne:', pickupOne);
-//   console.log('dropOff:', dropOff);
-//   console.log('selectedTime:', selectedTime);
-//   console.log('tripType:', tripType);
+  //   // Check if data is saved correctly
+  //   console.log('Data saved to local storage:');
+  //   console.log('selectedOption:', selectedOption);
+  //   console.log('pickupOne:', pickupOne);
+  //   console.log('dropOff:', dropOff);
+  //   console.log('selectedTime:', selectedTime);
+  //   console.log('tripType:', tripType);
 
   // Display error message
   const isEmpty =
     !selectedOption || !pickupOne || !dropOff || !selectedTime || !tripType;
 
-  if (!isEmpty){
-  // Display submit message
-  const submitMessageElement = document.createElement("div");
-  submitMessageElement.classList.add("submit");
-  submitMessageElement.textContent = "Form submitted successfully!"; // You can customize this message
-  submitMessageElement.style.color = "green"; // Set color to green
-  // Append the submit message to a container within the form
-  const formContainer = document.getElementById("myForm");
-  formContainer.appendChild(submitMessageElement);
+  if (!isEmpty) {
+    // Display submit message
+    const submitMessageElement = document.createElement("div");
+    submitMessageElement.classList.add("submit");
+    submitMessageElement.textContent = "Form submitted successfully!"; // You can customize this message
+    submitMessageElement.style.color = "green"; // Set color to green
+    // Append the submit message to a container within the form
+    const formContainer = document.getElementById("myForm");
+    formContainer.appendChild(submitMessageElement);
 
-  // Set timer to remove submit message after 5 seconds
-  const submitTimerId = setTimeout(() => {
+    // Set timer to remove submit message after 5 seconds
+    const submitTimerId = setTimeout(() => {
       if (submitMessageElement.parentNode === formContainer) {
-          formContainer.removeChild(submitMessageElement);
+        formContainer.removeChild(submitMessageElement);
       }
       clearTimeout(submitTimerId);
-  }, 3000); // 5 seconds in milliseconds
-   }if(isEmpty) {
+    }, 3000); // 5 seconds in milliseconds
+  }
+  if (isEmpty) {
     const errorMessageElement = document.createElement("div");
     errorMessageElement.classList.add("error-message");
     errorMessageElement.textContent = "Please fill in all fields.";
@@ -104,23 +103,21 @@ console.log('tripType:', tripType);
       }
       clearTimeout(timerId);
     }, 3000); // 5 seconds in milliseconds
-  } 
-    // If all inputs are filled, calculate total price
-    const totalPrice = calculateTotalPrice(
-      selectedOption,
-      pickupOne,
-      dropOff,
-      selectedTime,
-      tripType
-    );
+  }
+  // If all inputs are filled, calculate total price
+  const totalPrice = calculateTotalPrice(
+    selectedOption,
+    pickupOne,
+    dropOff,
+    selectedTime,
+    tripType
+  );
 
-    // Update the total price element with the calculated result
+  // Update the total price element with the calculated result
 
-    document.getElementById("total-price").textContent =
-      "Total Price: " + totalPrice;
-      console.log(totalPrice)
-  
-
+  document.getElementById("total-price").textContent =
+    "Total Price: " + totalPrice;
+  console.log(totalPrice);
 });
 
 // Function to calculate total price (replace this with your own logic)
