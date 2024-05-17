@@ -195,3 +195,7 @@ function calculateTotalPrice(
   ).textContent = `Total Price: R${totalPrice.toFixed(2)}`;
   console.log(totalPrice);
 }
+// function toggleSidebar() {
+//   const sidebar = document.getElementById("sidebar");
+//   sidebar.style.left = sidebar.style.left === "-250px" ? "0" : "-250px";
+// }
