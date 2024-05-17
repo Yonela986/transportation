@@ -286,7 +286,7 @@ ul li {
   z-index: 1;
   padding-top: 20px;
 }
-/* Form Container *
+/* Form Container */
 #myForm {
   max-width: 499px;
   margin: auto;
@@ -353,21 +353,21 @@ input[type="submit"]:hover {
   text-align: center;
 }
 
-/* .form-group {
+.form-group {
   margin-top: -2rem;
-  margin-bottom: 1rem; /* Adjust the spacing between form groups *
+  margin-bottom: 1rem; /* Adjust the spacing between form groups */
 }
 
 .form-group label {
   margin-top: -2rem;
-  margin-bottom: 0.5rem; /* Adjust the spacing between labels and inputs *
+  margin-bottom: 0.5rem; /* Adjust the spacing between labels and inputs */
 }
 
 .form-group input,
 .form-group select {
   margin-top: -2rem;
-  margin-bottom: 1rem; /* Adjust the spacing between inputs/selects and the next form element *
-} */
+  margin-bottom: 1rem; /* Adjust the spacing between inputs/selects and the next form element */
+}
 
 
 /*contact page*/
