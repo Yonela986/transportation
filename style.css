@@ -299,7 +299,7 @@ ul li {
 } 
 
 /* Datalist/Select List */
- #selectList {
+#selectList {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -307,7 +307,7 @@ ul li {
   margin-bottom: 10px;
 }
 
-/* Placeholders *
+/* Placeholders */
 input[type="text"] {
   width: 100%;
   padding: 8px;
@@ -321,7 +321,7 @@ input[type="text"]::placeholder {
   color: #999;
 }
 
-/* Checkboxes *
+/* Checkboxes */
 input[type="checkbox"] {
   margin-top: 2rem;
   margin-right: 8px;
@@ -340,7 +340,7 @@ input[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-} */
+}
 
 input[type="submit"]:hover {
   background-color: #0a0a0a;
