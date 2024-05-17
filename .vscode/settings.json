@@ -13,5 +13,6 @@
             "database": "transfaircheck",
             "username": "Yonela986"
         }
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

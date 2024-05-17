@@ -1,4 +1,4 @@
-const db = require('./myDB.sql');
+//const db = require('./myDB.sql');
 
 document.getElementById("myForm").addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent form submission
@@ -12,11 +12,11 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   
 // Retrieve values from form elements
-const selectedOptionValue = selectedOption.value;
-const pickupOneValue = pickupOne.value;
-const dropOffValue = dropOff.value;
-const selectedTimeValue = selectedTime.value;
-const tripTypeValue = tripType.value;
+// const selectedOptionValue = selectedOption.value;
+// const pickupOneValue = pickupOne.value;
+// const dropOffValue = dropOff.value;
+// const selectedTimeValue = selectedTime.value;
+// const tripTypeValue = tripType.value;
 
 // Create an object to hold the form data
 const formData = {
