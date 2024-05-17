@@ -1,3 +1,5 @@
+const db = require('./myDB.sql');
+
 document.getElementById("myForm").addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent form submission
 
@@ -10,45 +12,39 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   
 // Retrieve values from form elements
-const selectedOptionValue = selectedOption.value;
-const pickupOneValue = pickupOne.value;
-const dropOffValue = dropOff.value;
-const selectedTimeValue = selectedTime.value;
-const tripTypeValue = tripType.value;
+// const selectedOptionValue = selectedOption.value;
+// const pickupOneValue = pickupOne.value;
+// const dropOffValue = dropOff.value;
+// const selectedTimeValue = selectedTime.value;
+// const tripTypeValue = tripType.value;
 
 // Create an object to hold the form data
 const formData = {
-    selectList: selectedOptionValue,
-    pickupOne: pickupOneValue,
-    pickupTwo: dropOffValue,
-    selectedTime: selectedTimeValue,
-    tripType: tripTypeValue
+  selectList: selectedOption,
+  pickupOne: pickupOne,
+  pickupTwo: dropOff,
+  selectedTime: selectedTime,
+  tripType: tripType
 };
-// const insertQuery = `INSERT INTO formData (selectList, pickupOne, pickupTwo, selectedTime, tripType) VALUES (?, ?, ?, ?, ?)`;
-// const values = [
-//   formData.selectList,
-//   formData.pickupOne,
-//   formData.pickupTwo,
-//   formData.selectedTime,
-//   formData.tripType
-// ];
 
+// Insert form data into the database
+db.insertFormData(formData, function(err, changes) {
+  if (err) {
+      // Handle error
+      console.error('Error inserting form data:', err);
+  } else {
+      // Data inserted successfully
+      console.log('Rows inserted:', changes);
+      // Reset the form
+      document.getElementById("myForm").reset();
+  }
+});
 // // Execute the SQL query to insert the data into the SQLite database
-// const sqlite3 = require('sqlite3').verbose();
-// const db = new sqlite3.Database('myDB.sql');
 
-// db.run(insertQuery, values, function(err) {
-//   if (err) {
-//     console.error('Error inserting data into SQLite table:', err.message);
-//   } else {
-//     console.log(`Rows inserted: ${this.changes}`);
-//   }
-// });
-
-// // Close the database connection
+// Close the database connection
 // db.close();
 
-// Reset the form
+//Reset the form
 //document.getElementById("myForm").reset();
 
 // Check if data is saved correctly
@@ -60,8 +56,8 @@ console.log('selectedTime:', selectedTime);
 console.log('tripType:', tripType);
 
 // Store the form data in localStorage after converting it to a JSON string using JSON.stringify()
-localStorage.setItem("formData", JSON.stringify(formData));
-   document.getElementById("myForm").reset();
+// localStorage.setItem("formData", JSON.stringify(formData));
+//    document.getElementById("myForm").reset();
 
 
 //   // Check if data is saved correctly

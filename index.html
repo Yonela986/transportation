@@ -36,35 +36,43 @@
   <body>
   <!--Header content-->
     <header class="header">
-      <nav
-        role="navigation"
-        aria-label="wibesite navigation bar"
-        class="navbar"
-      > <img class="logoImage"
-      src="./images/company logo.jpg"
-      alt="logo"
-      width="150px"
-      height="150px"
-    />
-   
-        <ul>
-          <li><a href="#contactContainer">Contact Us</a></li>
-          <li><a href="#team">Our Team</a></li>
-          <li><a href="#rideDetails">Service Form</a></li>
-          <li><a href="#aboutContainer">About Us</a></li>
-        </ul>
-        <span class="material-symbols-outlined">
-          menu
-          </span>
-      </nav>
+      <nav class="navbar">
+        <div class="navbar-header">
+          <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+         
+            <img class="logoImage"
+            src="./images/company logo.jpg"
+            alt="logo"
+            width="150px"
+            height="150px"
+          >
+        </div>
      
-      <div class="header-content">
-        <h1><b>Tech-Con Traders</b></h1>
-      
-      <p>
-        <i>Real Information About Transportation To Reach Your Destination</i>
-      </p>
-    </div>
+        <div class="navbar-links" id="navbar-links">
+          <a href="#contactContainer">Contact Us</a>
+        <a href="#team">Our Team</a>
+        <a href="#rideDetails">Service Form</a>
+        <a href="#aboutContainer">About Us</a>
+        </div>
+        </nav>
+     
+        <div class="sidebar" id="sidebar">
+          <a href="#" class="close-btn" onclick="toggleSidebar()">×</a>
+     
+        <a href="#contactContainer">Contact Us</a>
+        <a href="#team">Our Team</a>
+        <a href="#rideDetails">Service Form</a>
+        <a href="#aboutContainer">About Us</a>
+     
+        </div>
+        <div class="content">
+       
+        <div class="header-content">
+          <span class="h1"><h1><b>Tech-Con Traders</b></h1></span>
+        <p class="text"><i>Real Information About Transportation To Reach Your Destination</i>
+        </p>
+      </div>
+    </header>
   </header>
   <!--About Page content-->
   <main>
