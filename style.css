@@ -299,7 +299,7 @@ ul li {
 } 
 
 /* Datalist/Select List */
-/* #selectList {
+ #selectList {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -328,7 +328,7 @@ input[type="checkbox"] {
   margin-bottom: 10px;
 }
 
-/* Submit Button *
+/* Submit Button */
 input[type="submit"] {
   display: block;
   width: 100%;
